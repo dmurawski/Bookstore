@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md fixed-top bg-body-secondary c-navbar fs-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'pages:home' %}">
+        <i class="bi bi-book-half"class="d-inline-block align-text-top"></i>
+        Bookstore
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav ps-5">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:about' %}">
+              About
+            </a>
+          </li>            
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
+                Log Out
+              </a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+</nav>

@@ -1,0 +1,30 @@
+h1 {
+    color:hsl(0, 0%, 42%)
+}
+.c-img{
+    height: 300px;
+    width: auto;
+}
+
+body {
+    padding-top: 4.5rem;
+    min-height: 175rem;
+    background-color: hsl(0, 0%, 80%);
+}
+
+.c-navbar{
+    transition: all 0.5s;
+}
+.navbar-scrolled{
+    opacity: 90%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+/* 
+section{
+    padding-top: 3rem;
+} */
+
+.nav-link:hover {
+    color: red;
+    transition: all 0.5s;
+}

@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
+    "django.contrib.sites",
     "allauth",
     "allauth.account",
     # 3rd-party apps
@@ -154,3 +155,6 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 # django-crispy-forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+DEFAULT_FROM_EMAIL = "admin@bookstore.com"

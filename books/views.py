@@ -3,15 +3,23 @@ from .models import Book
 from django.contrib.auth import mixins
 
 
-class BookListView(mixins.LoginRequiredMixin, generic.ListView):
+class BookListView(
+    mixins.LoginRequiredMixin,
+    generic.ListView,
+):
     model = Book
     context_object_name = "book_list"
     template_name = "books/book_list.html"
     login_url = "account_login"
 
 
-class BookDetialView(mixins.LoginRequiredMixin, generic.DetailView):
+class BookDetialView(
+    mixins.LoginRequiredMixin,
+    mixins.PermissionRequiredMixin,
+    generic.DetailView,
+):
     model = Book
     context_object_name = "book"
     template_name = "books/book_detail.html"
     login_url = "account_login"
+    permission_required = "books.special_status"

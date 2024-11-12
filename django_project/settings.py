@@ -14,10 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("DJANGO_SECRET_KEY")
+SECRET_KEY = "UUDl-uy3MiBCvsWslYesBkk4eisWjuL4gt0FxmXanBLvIWy9M58"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DJANGO_DEBUG")
+DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -102,7 +102,14 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 
 # Railway
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL"),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "YSJBlltxZqeClNhbcldxCyCytFlYYVbU",
+        "HOST": "junction.proxy.rlwy.net",
+        "PORT": "31723",
+    }
 }
 
 # Password validation

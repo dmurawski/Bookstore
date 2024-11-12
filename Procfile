@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn django_project.wsgi --bind 0.0.0.0:8000 --log-file -
+web: python manage.py migrate && gunicorn django_project.wsgi -b 0.0.0.0:8000 --log-file -

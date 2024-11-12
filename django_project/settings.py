@@ -1,6 +1,8 @@
 from pathlib import Path
 
+
 from environs import Env
+
 
 env = Env()
 env.read_env()
@@ -40,21 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",
+    "debug_toolbar",
 ]
 
-# django-allauth config
-LOGIN_REDIRECT_URL = "pages:home"
-ACCOUNT_LOGOUT_REDIRECT = "pages:home"
-SITE_ID = 1
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = "email"
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -65,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "django_project.urls"
@@ -165,3 +156,23 @@ DEFAULT_FROM_EMAIL = "admin@bookstore.com"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# django-allauth config
+LOGIN_REDIRECT_URL = "pages:home"
+ACCOUNT_LOGOUT_REDIRECT = "pages:home"
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+
+# django-debug-toolbar
+import socket
+
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]

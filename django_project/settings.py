@@ -184,5 +184,5 @@ CACHE_MIDDLEWARE_KEY_PREFIX = ""
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://bookstore-production-09be.up.railway.app/",
+    "https://bookstore-production-09be.up.railway.app",
 ]

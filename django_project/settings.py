@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
     "books.apps.BooksConfig",
+    "reviews.apps.ReviewsConfig",
     # 3rd-party apps
     "crispy_forms",
     "crispy_bootstrap5",

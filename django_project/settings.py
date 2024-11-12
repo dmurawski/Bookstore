@@ -30,7 +30,9 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
@@ -39,7 +41,6 @@ INSTALLED_APPS = [
     # 3rd-party apps
     "crispy_forms",
     "crispy_bootstrap5",
-    "django.contrib.sites",
     "allauth",
     "allauth.account",
     "debug_toolbar",
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -183,3 +185,5 @@ INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 CACHE_MIDDLEWARE_ALIAS = "default"
 CACHE_MIDDLEWARE_SECONDS = 604800
 CACHE_MIDDLEWARE_KEY_PREFIX = ""
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

@@ -10,10 +10,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
         <ul class="navbar-nav ps-5">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:about' %}">
+            <a class="nav-link active" href="{% url 'pages:about' %}">
               About
             </a>
-          </li>            
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'books:book_list' %}">
+              Books
+            </a>
+          </li>
+                   
           {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'account_logout' %}">

@@ -31,12 +31,13 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
-    "django.contrib.sites",
-    "allauth",
-    "allauth.account",
+    "books.apps.BooksConfig",
     # 3rd-party apps
     "crispy_forms",
     "crispy_bootstrap5",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
 ]
 
 # django-allauth config

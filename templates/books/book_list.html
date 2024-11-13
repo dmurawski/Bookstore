@@ -3,24 +3,33 @@
 {% block title %}Books{% endblock title %}
 
 {% block content %}
-  <section>
-    {% for book in book_list %}
-      <div class="card" style="width: 18rem;">
-        <img src="{{ book.cover.url }}" class="card-img-top img-fluid" alt="book_cover">
-        <div class="card-body">
-          <h5 class="card-title">{{ book.title }}</h5>
-          <p class="card-text">{{ book.description }}</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{ book.author }}</li>
-          <li class="list-group-item">{{ book.published_date }}</li>
-          <li class="list-group-item">{{ book.price}}</li>
-        </ul>
-        <div class="card-body">
-          <a href="{{ book.get_absolute_url }}" class="card-link">Look more!</a>
+  <section style="padding: 5rem 0;">
+    <div class="container">
+      <h1 class="display-3 text-dark">Books</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        {% for book in book_list %}
+          <div class="col">
+            <div class="card h-100">
+              <img src="{{ book.cover.url }}" class="card-img-top h-50" alt="book_cover" style="object-fit: contain;">
+              <div class="card-body h-25">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text">{{ book.description }}</p>
+              </div>
+              <ul class="list-group list-group-flush h-25">
+                <li class="list-group-item"><b>Author:</b> {{ book.author }}</li>
+                <li class="list-group-item"><b>Published date:</b>{{ book.published_date }}</li>
+                <li class="list-group-item"><b>Price:</b> {{ book.price }} $</li>
+              </ul>
+              <div class="card-footer">
+                <a href="{{ book.get_absolute_url }}" class="btn btn-primary w-100">Look more!</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <div class="d-flex justify-content-center w-100">
+          {% include "pagination.html" with page=page_obj %}
         </div>
       </div>
-    {% endfor %}
-    {% include "pagination.html" with page=page_obj %}
+    </div>
   </section>
 {% endblock content %}

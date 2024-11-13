@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<section style="padding: 5rem 0;">
+  <div class="container">
+    <h2>Create a New Book</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Create Book</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

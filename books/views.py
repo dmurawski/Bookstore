@@ -1,4 +1,3 @@
-from django.db.models.query import QuerySet
 from django.views import generic
 from .models import Book
 from django.contrib.auth import mixins
@@ -11,6 +10,7 @@ class BookListView(
 ):
     model = Book
     context_object_name = "book_list"
+    paginate_by = 6
     template_name = "books/book_list.html"
     login_url = "account_login"
 

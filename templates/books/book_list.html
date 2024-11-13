@@ -3,13 +3,16 @@
 {% block title %}Books{% endblock title %}
 
 {% block content %}
+  <section>
     {% for book in book_list %}
-        <div>
-            <h2>
-                <a href="{{ book.get_absolute_url }}">
-                    {{ book.title }}
-                </a>
-            </h2>
-        </div>
+      <div class="container">
+        <h2>
+          <a href="{{ book.get_absolute_url }}">
+            {{ book.title }}
+          </a>
+        </h2>
+      </div>
     {% endfor %}
+    {% include "pagination.html" with page=page_obj %}
+  </section>
 {% endblock content %}

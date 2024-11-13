@@ -4,5 +4,9 @@ from . import views
 app_name = "reviews"
 
 urlpatterns = [
-    path("", views.ReviewCreateView.as_view(), name="review_create"),
+    path(
+        "books/<uuid:book_id>/review/",
+        views.ReviewCreateView.as_view(),
+        name="review_create",
+    ),
 ]

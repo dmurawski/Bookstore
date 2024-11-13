@@ -1,13 +1,13 @@
 {% extends '_base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 <section style="padding: 5rem 0;">
   <div class="container">
-    <h2>Create a New Book</h2>
+    <div class="display-5 text-dark fw-bold text-center">Create a review: {{ book.title }}</div>
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Create Book</button>
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-primary py-3 w-100">Add review!</button>
     </form>
   </div>
 </section>

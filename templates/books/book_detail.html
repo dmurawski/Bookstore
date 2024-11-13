@@ -21,7 +21,7 @@
                 <small class="text-body-secondary"><b>Published date: </b>{{ book.published_date }}</small></p>
             </div>
             <div class="card-footer h-25">
-              <a href="{% url 'reviews:review_create' %}" class="btn btn-primary w-100">Add review!</a>
+              <a href="{% url 'reviews:review_create' book_id=book.id %}" class="btn btn-primary w-100">Add review!</a>
             </div>
           </div>
         </div>

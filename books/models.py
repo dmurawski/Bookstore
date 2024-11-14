@@ -10,6 +10,13 @@ def get_default_cover():
     return default_cover_path
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
     id = models.UUIDField(
         primary_key=True,
@@ -27,6 +34,13 @@ class Book(models.Model):
     )
     description = models.TextField(blank=True, default="No description")
     published_date = models.DateField(default=date.today)
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE,
+        related_name="books",
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name_plural = "Books"

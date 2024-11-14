@@ -1,8 +1,9 @@
-from django.views import generic
-from .models import Category, Book
 from django.contrib.auth import mixins
 from django.db.models import Q
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
+from django.views import generic
+
+from .models import Book, Category
 
 
 class BookListView(

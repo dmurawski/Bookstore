@@ -1,9 +1,10 @@
-from django.views import generic
-from .models import Review, Book
-from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404
-from .forms import ReviewForm
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
+from django.views import generic
+
+from .forms import ReviewForm
+from .models import Book, Review
 
 
 class ReviewCreateView(generic.CreateView):

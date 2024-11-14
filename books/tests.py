@@ -1,9 +1,11 @@
-from django.test import TestCase, Client
-from django.urls import reverse
 from django.contrib.auth import get_user_model
-from .models import Book
-from reviews.models import Review
 from django.contrib.auth.models import Permission
+from django.test import Client, TestCase
+from django.urls import reverse
+
+from reviews.models import Review
+
+from .models import Book
 
 
 class BookTest(TestCase):

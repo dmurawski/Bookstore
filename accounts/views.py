@@ -1,8 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.views import generic
-from .forms import CustomUserCreationForm
-from django.contrib.auth import get_user_model
+
 from reviews.models import Review
+
+from .forms import CustomUserCreationForm
 
 
 class SignupPageView(generic.CreateView):

@@ -1,8 +1,10 @@
-from django.views.generic import TemplateView
-from django.core.mail import send_mail
 from django.conf import settings
-from .forms import EmailForm
+from django.core.mail import send_mail
+from django.views.generic import TemplateView
+
 from books.models import Category
+
+from .forms import EmailForm
 
 
 class HomePageView(TemplateView):

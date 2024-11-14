@@ -1,9 +1,10 @@
 from django.contrib import admin
-
-from .models import Book, Category
-from reviews.models import Review
 from import_export import resources
 from import_export.admin import ExportMixin
+
+from reviews.models import Review
+
+from .models import Book, Category
 
 
 class BookResource(resources.ModelResource):

@@ -16,4 +16,4 @@ class Review(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.review
+        return f"Review for {self.book.title} by {self.author.username}"

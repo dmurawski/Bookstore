@@ -13,11 +13,11 @@
               <img src="{{ book.cover.url }}" class="card-img-top h-50" alt="book_cover" style="object-fit: contain;">
               <div class="card-body h-25">
                 <h5 class="card-title">{{ book.title }}</h5>
-                <p class="card-text">{{ book.description|truncatewords:30 }}</p>
+                <p class="card-text">{{ book.description|truncatewords:10}}</p>
               </div>
               <ul class="list-group list-group-flush h-25">
                 <li class="list-group-item"><b>Author:</b> {{ book.author }}</li>
-                <li class="list-group-item"><b>Published date:</b>{{ book.published_date }}</li>
+                <li class="list-group-item"><b>Published date: </b>{{ book.published_date }}</li>
                 <li class="list-group-item"><b>Price:</b> {{ book.price }} $</li>
               </ul>
               <div class="card-footer">

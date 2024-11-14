@@ -26,13 +26,22 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div class="container">
       <div>
         <h3>Reviews:</h3>
-        <ul>
-          {% for review in book.reviews.all %}
-            <li>{{ review.review }} ({{ review.author }})</li>
-          {% endfor %}
-        </ul>
+        {% for review in book.reviews.all %}
+          <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{ review.author }}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <p class="card-text">{{ review.review }}</p>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>

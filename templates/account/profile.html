@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% block title %}Your Profile{% endblock title %}
+
+{% block content %}
+  <h1>My Profile</h1>
+  <h2>Your Reviews</h2>
+
+  <ul>
+    {% for review in reviews %}
+      <li>
+        <strong>Review for: {{ review.book.title }}</strong>
+        <p>{{ review.review }}</p>
+        <a href="{% url 'accounts:review_edit' review.pk %}">Edit</a> |
+        <a href="{% url 'accounts:review_delete' review.pk %}">Delete</a>
+      </li>
+    {% empty %}
+      <p>You don't have any reviews yet.</p>
+    {% endfor %}
+  </ul>
+{% endblock content %}

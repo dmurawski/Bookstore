@@ -9,4 +9,15 @@ urlpatterns = [
         views.ReviewCreateView.as_view(),
         name="review_create",
     ),
+    path(
+        "review/edit/<int:pk>/",
+        views.ReviewUpdateView.as_view(),
+        name="review_edit",
+    ),
+    path(
+        "review/delete/<int:pk>/",
+        views.ReviewDeleteView.as_view(),
+        name="review_delete",
+    ),
+    path("", views.UserReviewsView.as_view(), name="reviews"),
 ]

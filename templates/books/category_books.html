@@ -32,8 +32,12 @@
           </div>
         </div>
       {% else %}
-        <div class="display-5">No books in this category.</div>
+        <div class="col-9 mx-auto text-center">
+          <div class="display-5">No books in this category.</div>
+          <div><i class="bi bi-emoji-frown-fill fs-1"></i></div>
+          <a href="{% url 'books:book_list' %}" class="btn btn-primary btn-lg text-wrap">Return to home page</a>
       {% endif %}
     </div>
+  </div>
   </section>
 {% endblock content %}

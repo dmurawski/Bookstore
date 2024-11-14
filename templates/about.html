@@ -69,7 +69,7 @@
   <section id="contact">
     <div class="container">
       <div class="text-center">
-        <h2>Get in Touch</h2>
+        <h2>Get in Touch <i class="bi bi-bullseye"></i></h2>
         <p class="lead">Question to ask? Fill out the form to contact us...</p>
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -77,7 +77,7 @@
               <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button type="submit" class="btn btn-primary p-2">Send Email</button>
+                <button type="submit" class="btn btn-primary p-2">Send Email <i class="bi bi-send"></i></button>
               </form>
             </div>
           </div>

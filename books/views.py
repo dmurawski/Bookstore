@@ -38,11 +38,20 @@ class SearchResultsListView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get("q")
-        return Book.objects.filter(
-            Q(title__icontains=query)
-            | Q(author__icontains=query)
-            | Q(category__name__icontains=query)
+        return (
+            Book.objects.filter(
+                Q(title__icontains=query)
+                | Q(author__icontains=query)
+                | Q(category__name__icontains=query)
+            )
+            if query
+            else Book.objects.none()
         )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["query"] = self.request.GET.get("q", "")
+        return context
 
 
 def category_books(request, category_slug):

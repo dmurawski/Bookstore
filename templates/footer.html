@@ -18,10 +18,10 @@
         <div class="col-md-2">
           <h5>Categories</h5>
           <ul class="list-unstyled">
-            <li><a href="/category/fiction">Fiction</a></li>
-            <li><a href="/category/non-fiction">Non-Fiction</a></li>
-            <li><a href="/category/children">Children's Books</a></li>
-            <li><a href="/category/science">Science</a></li>
+            <li><a href="{% url 'books:category_books' 'drama' %}">Drama</a></li>
+            <li><a href="{% url 'books:category_books' 'non-fiction' %}">Non-Fiction</a></li>
+            <li><a href="{% url 'books:category_books' 'thriller' %}">Thriller</a></li>
+            <li><a href="{% url 'books:category_books' 'non-fiction' %}">Science</a></li>
           </ul>
         </div>
       </div>

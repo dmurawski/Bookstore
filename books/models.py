@@ -12,6 +12,7 @@ def get_default_cover():
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(blank=True)
 
     def __str__(self):
         return self.name

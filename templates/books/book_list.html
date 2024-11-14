@@ -6,14 +6,14 @@
   <section style="padding: 5rem 0;">
     <div class="container">
       <h1 class="display-3 text-dark">Books</h1>
-      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+      <div class="row g-4 justify-content-center">
         {% for book in book_list %}
-          <div class="col">
+          <div class="col-10 col-md-6 col-lg-4">
             <div class="card h-100">
               <img src="{{ book.cover.url }}" class="card-img-top h-50" alt="book_cover" style="object-fit: contain;">
               <div class="card-body h-25">
                 <h5 class="card-title">{{ book.title }}</h5>
-                <p class="card-text">{{ book.description }}</p>
+                <p class="card-text">{{ book.description|truncatewords:30 }}</p>
               </div>
               <ul class="list-group list-group-flush h-25">
                 <li class="list-group-item"><b>Author:</b> {{ book.author }}</li>

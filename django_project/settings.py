@@ -33,17 +33,18 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-    # Local
-    "accounts.apps.AccountsConfig",
-    "pages.apps.PagesConfig",
-    "books.apps.BooksConfig",
-    "reviews.apps.ReviewsConfig",
     # 3rd-party apps
     "crispy_forms",
     "crispy_bootstrap5",
     "allauth",
     "allauth.account",
     "debug_toolbar",
+    "import_export",
+    # Local
+    "accounts.apps.AccountsConfig",
+    "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
+    "reviews.apps.ReviewsConfig",
 ]
 
 
@@ -75,6 +76,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # local
+                "books.context_processor.categories",
             ],
         },
     },

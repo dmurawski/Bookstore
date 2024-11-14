@@ -1,0 +1,36 @@
+<section>
+  <footer class="bg-body-secondary py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center text-md-start">
+        <div class="col-md-4">
+          <h5>About Us</h5>
+          <p>Welcome to Bookstore, your go-to place for the best reads. Explore our collection and discover your next favorite book.</p>
+        </div>
+        <div class="col-md-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about#contact">Contact</a></li>
+            <li><a href="/about/#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5>Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'books:category_books' 'drama' %}">Drama</a></li>
+            <li><a href="{% url 'books:category_books' 'non-fiction' %}">Non-Fiction</a></li>
+            <li><a href="{% url 'books:category_books' 'thriller' %}">Thriller</a></li>
+            <li><a href="{% url 'books:category_books' 'non-fiction' %}">Science</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p>&copy; 2024 Bookstore. All rights reserved.</p>
+        <p>Follow us on:
+          <a href="https://github.com/dmurawski/Bookstore" aria-label="Github">Github<i class="bi bi-github ms-2"></i></a>
+        </div>
+      </div>
+    </footer>
+  </section>
+

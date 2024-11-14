@@ -33,17 +33,18 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-    # Local
-    "accounts.apps.AccountsConfig",
-    "pages.apps.PagesConfig",
-    "books.apps.BooksConfig",
-    "reviews.apps.ReviewsConfig",
     # 3rd-party apps
     "crispy_forms",
     "crispy_bootstrap5",
     "allauth",
     "allauth.account",
     "debug_toolbar",
+    "import_export",
+    # Local
+    "accounts.apps.AccountsConfig",
+    "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
+    "reviews.apps.ReviewsConfig",
 ]
 
 
@@ -75,6 +76,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # local
+                "books.context_processor.categories",
             ],
         },
     },
@@ -86,18 +89,11 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
-    "default": env.dj_db_url(
-        "DATABASE_URL",
-        default="postgres://postgres@db/postgres",
-    )
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
 

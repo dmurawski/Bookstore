@@ -12,4 +12,9 @@ urlpatterns = [
         views.SearchResultsListView.as_view(),
         name="search_results",
     ),
+    path(
+        "category/<slug:category_slug>/",
+        views.category_books,
+        name="category_books",
+    ),
 ]

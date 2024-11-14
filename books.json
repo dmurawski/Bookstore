@@ -1,0 +1,167 @@
+[
+  {
+    "model": "books.book",
+    "pk": "d257a3ff-3d21-4b96-b703-7cc9d520c9b5",
+    "fields": {
+      "title": "1984",
+      "author": "George Orwell",
+      "price": "12.00",
+      "description": "A dystopian novel depicting a totalitarian regime.",
+      "published_date": "1949-06-08"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "f5a7e9c1-b7d1-40a1-9a96-b9bc5864d0a2",
+    "fields": {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "price": "14.00",
+      "description": "A futuristic novel exploring the perils of a highly controlled society.",
+      "published_date": "1932-08-01"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "a1b9d870-b7fc-44f7-a4b8-ded8d15b22d1",
+    "fields": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "price": "10.50",
+      "description": "A novel about a future society where books are banned and burned.",
+      "published_date": "1953-10-19"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "73f42288-7d80-4f74-a5e2-97d2fcbbebee",
+    "fields": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "price": "11.50",
+      "description": "A gripping and emotional story of racial injustice in the American South.",
+      "published_date": "1960-07-11"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "9b9e9e2c-78fa-4a22-93fa-502b4444445c",
+    "fields": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "price": "13.00",
+      "description": "A novel about the American Dream, love, and the excesses of the Jazz Age.",
+      "published_date": "1925-04-10"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "cd38f1d7-47be-4e2c-898d-dfe8712adff1",
+    "fields": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "price": "15.00",
+      "description": "A tale of obsession, revenge, and the dangers of fanaticism.",
+      "published_date": "1851-10-18"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "8ec76879-d619-42f0-9f4e-89a9d3a4923b",
+    "fields": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "price": "9.50",
+      "description": "A classic romance novel about love, marriage, and social class.",
+      "published_date": "1813-01-28"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "b9a02447-d3ed-4a73-820b-3a9c257e1b57",
+    "fields": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "price": "10.00",
+      "description": "A novel about adolescence, alienation, and the struggles of growing up.",
+      "published_date": "1951-07-16"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "4d824f49-c05d-4b7f-badf-bc23034c1abf",
+    "fields": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "price": "16.00",
+      "description": "A fantasy novel about the adventures of Bilbo Baggins.",
+      "published_date": "1937-09-21"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "37784802-b02f-49c0-84a7-c1ed8b44f4f7",
+    "fields": {
+      "title": "Catch-22",
+      "author": "Joseph Heller",
+      "price": "17.00",
+      "description": "A darkly comedic novel about the absurdity of war.",
+      "published_date": "1961-11-11"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "3f3e96d3-8a8f-4f4f-8d77-67b9b1547c77",
+    "fields": {
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "price": "34.99",
+      "description": "A handbook of agile software craftsmanship that provides principles and practices to write clean, maintainable code.",
+      "published_date": "2008-08-11"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "bff9e4c7-c6ed-482f-8f5b-49c3436a4c8d",
+    "fields": {
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt, David Thomas",
+      "price": "29.99",
+      "description": "A guide that offers pragmatic advice on becoming a better programmer through best practices and solid software development strategies.",
+      "published_date": "1999-10-30"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "40a3c56c-b8b7-4680-8b56-d7315e324ff1",
+    "fields": {
+      "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+      "price": "39.99",
+      "description": "A classic book that introduces fundamental design patterns used in object-oriented software development.",
+      "published_date": "1994-10-21"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "c71647e9-c5f7-4e57-8fc4-b0bbf8c5c334",
+    "fields": {
+      "title": "Refactoring: Improving the Design of Existing Code",
+      "author": "Martin Fowler",
+      "price": "42.00",
+      "description": "A guide to refactoring and improving the structure of existing code without changing its functionality.",
+      "published_date": "1999-06-01"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": "81a7bfa1-cf77-4964-8db4-11111e0a441b",
+    "fields": {
+      "title": "Code Complete",
+      "author": "Steve McConnell",
+      "price": "49.95",
+      "description": "An in-depth book on writing software, providing practical tips for writing high-quality code.",
+      "published_date": "1993-06-09"
+    }
+  }
+]

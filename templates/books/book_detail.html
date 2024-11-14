@@ -1,24 +1,48 @@
 {% extends "_base.html" %}
 
 {% block title %}
-    {{ book.title }}
+  {{ book.title }}
 {% endblock title %}
 
 {% block content %}
-    <div>
-        {% if book.cover %}
-            <img src="{{ book.cover.url }}" alt="{{ book.title }}">
-        {% endif %}
-        <h2><a href="">{{ book.title }}</a></h2>
-        <p>Author: {{ book.author }}</p>
-        <p>Price: {{ book.price }}</p>
-        <div>
-            <h3>Reviews</h3>
-            <ul>
-                {% for review in book.reviews.all %}
-                    <li>{{ review.review }} ({{ review.author }})</li>
-                {% endfor %}
-            </ul>
+  <section style="padding: 5rem 0;">
+    <div class="container">
+      <h1 class="display-3 text-dark">Book: {{ book.author }} - {{ book.title }}</h1>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ book.cover.url }}" alt="{{ book.title }}" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body h-75">
+              <h5 class="card-title">{{ book.author }} - {{ book.title }}</h5>
+              <p class="card-text">{{ book.description }}</p>
+              <p class="card-text">
+                <small class="text-body-secondary"><b>Published date: </b>{{ book.published_date }}</small></p>
+            </div>
+            <div class="card-footer h-25">
+              <a href="{% url 'reviews:review_create' book_id=book.id %}" class="btn btn-primary w-100">Add review!</a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
+  <hr>
+  <section>
+    <div class="container">
+      <div>
+        <h3>Reviews:</h3>
+        {% for review in book.reviews.all %}
+          <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{ review.author }}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <p class="card-text">{{ review.review }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 {% endblock content %}

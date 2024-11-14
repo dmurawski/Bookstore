@@ -9,11 +9,11 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         related_name="reviews",
     )
-    review = models.CharField(max_length=255)
+    review = models.TextField(blank=True)
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
     )
 
     def __str__(self) -> str:
-        return self.review
+        return f"Review for {self.book.title} by {self.author.username}"
